@@ -1,0 +1,99 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:FluentControls="using:FluentAvalonia.UI.Controls"
+        xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector="FluentControls|NavigationView">
+            <Setter Property="IsPaneToggleButtonVisible" Value="False" />
+            <Setter Property="OpenPaneLength" Value="72" />
+        </Style>
+        <Style Selector="FluentControls|NavigationView[IsBackButtonVisible=False] SplitView /template/ ContentPresenter#PART_PanePresenter">
+            <Setter Property="Margin" Value="0 40 0 0" />
+        </Style>
+
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter">
+            <Setter Property="Width" Value="72" />
+            <Setter Property="MinHeight" Value="60" />
+            <Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}" />
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorSecondaryBrush}" />
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border
+                        Name="LayoutRoot"
+                        Margin="4,2"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        TemplatedControl.IsTemplateFocusTarget="True">
+                        <Panel>
+                            <Panel HorizontalAlignment="Left" VerticalAlignment="Center">
+
+                                <Border
+                                    Name="SelectionIndicator"
+                                    Width="3"
+                                    Height="20"
+                                    VerticalAlignment="Center"
+                                    Background="{DynamicResource NavigationViewSelectionIndicatorForeground}"
+                                    CornerRadius="{StaticResource ControlCornerRadius}"
+                                    Opacity="0" />
+                            </Panel>
+
+
+                            <DockPanel>
+                                <ContentPresenter
+                                    Name="ContentPresenter"
+                                    Grid.Row="1"
+                                    Margin="0,-15,0,3"
+                                    Padding="0,4"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    DockPanel.Dock="Bottom"
+                                    FontSize="10">
+                                    <ContentPresenter.Styles>
+                                        <Style Selector="TextBlock">
+                                            <Setter Property="TextWrapping" Value="Wrap" />
+                                        </Style>
+                                    </ContentPresenter.Styles>
+                                </ContentPresenter>
+
+                                <Viewbox
+                                    Name="IconBox"
+                                    Height="28"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                    <ContentPresenter Name="Icon" Content="{Binding TemplateSettings.Icon, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Viewbox>
+
+                            </DockPanel>
+                        </Panel>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter:pointerover /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+        </Style>
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter:pointerover /template/ ContentPresenter#Icon">
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+        </Style>
+
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter:pressed /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorSecondaryBrush}" />
+        </Style>
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter:pressed /template/ ContentPresenter#Icon">
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorSecondaryBrush}" />
+        </Style>
+
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter:selected /template/ ContentPresenter#ContentPresenter">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="FluentControls|NavigationViewItem uip|NavigationViewItemPresenter:selected /template/ ContentPresenter#Icon">
+            <Setter Property="Foreground" Value="{DynamicResource AccentFillColorDefaultBrush}" />
+        </Style>
+</Styles>

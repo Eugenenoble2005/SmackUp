@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="SmackUp.Desktop/App.axaml" value="SmackUp.Desktop/SmackUp.Desktop.csproj" />
+        <entry key="SmackUp.Desktop/CompactFluentNavigationViewStyle.axaml" value="SmackUp.Desktop/SmackUp.Desktop.csproj" />
+        <entry key="SmackUp.Desktop/MainWindow.axaml" value="SmackUp.Desktop/SmackUp.Desktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

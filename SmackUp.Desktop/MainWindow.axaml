@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fluent="using:FluentAvalonia.UI.Controls"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        ExtendClientAreaToDecorationsHint="True"
+        x:Class="SmackUp.Desktop.MainWindow"
+        Title="SmackUp.Desktop">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Main Shows"></TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="/Assets/wwe-logo.png" Height="50" ToolTip.Tip="WWE shows"></Image> 
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="/Assets/aew-logo.png" Height="50" ToolTip.Tip="AEW shows"></Image> 
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Image Source="/Assets/njpw-logo.png" Height="50" ToolTip.Tip="NJPW shows"></Image> 
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
